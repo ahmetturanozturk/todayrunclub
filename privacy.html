@@ -1,4 +1,604 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Gizlilik Politikası | Privacy Policy</title>
+  <meta name="description" content="Uygulama gizlilik politikası: veri toplama, kullanım, paylaşım, güvenlik ve kullanıcı hakları." />
 
-<p>
-  test
-</p>
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.58);
+      --line: rgba(255,255,255,.12);
+      --accent: #7c3aed; /* mor */
+      --accent2:#22c55e; /* yeşil */
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f7fb;
+        --card: rgba(10,10,25,.06);
+        --card2: rgba(10,10,25,.08);
+        --text: rgba(10,10,25,.92);
+        --muted: rgba(10,10,25,.72);
+        --muted2: rgba(10,10,25,.58);
+        --line: rgba(10,10,25,.12);
+        --shadow: 0 20px 60px rgba(2,6,23,.12);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.35), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(34,197,94,.22), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, rgba(59,130,246,.12), transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding-left: 6px;
+      min-width: 220px;
+    }
+    .logo{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.85), rgba(255,255,255,0) 45%),
+        linear-gradient(135deg, var(--accent), #3b82f6);
+      box-shadow: 0 10px 26px rgba(124,58,237,.25);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .brand b{ font-size: 14px; letter-spacing:.2px; }
+    .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: -2px; }
+
+    .actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding-right: 6px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+      user-select:none;
+    }
+    .pill code{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+
+    .btn{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.08); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      border-color: rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.25), rgba(59,130,246,.18));
+    }
+
+    header.hero{
+      margin-top: 22px;
+      padding: 26px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(520px 240px at 20% 10%, rgba(124,58,237,.28), transparent 60%),
+        radial-gradient(520px 240px at 80% 0%, rgba(34,197,94,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .hero h1{
+      margin: 0;
+      font-size: clamp(22px, 3.2vw, 34px);
+      letter-spacing: -0.4px;
+      position: relative;
+    }
+    .hero p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+      position: relative;
+    }
+
+    .meta-row{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+    }
+
+    .tabs{
+      margin-top: 18px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      user-select:none;
+      font-size: 13px;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .tab[aria-selected="true"]{
+      color: var(--text);
+      border-color: rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.22), rgba(59,130,246,.16));
+    }
+
+    main{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+      .actions{ justify-content:flex-start; }
+      .topbar{ border-radius: var(--radius2); }
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .section{
+      display:flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .section:first-child{ border-top: 0; padding-top: 0; }
+    .icon{
+      width: 40px; height: 40px;
+      flex: 0 0 40px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%),
+        rgba(255,255,255,.04);
+      display:grid;
+      place-items:center;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .section h2{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .section p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .side h3{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--text);
+      letter-spacing:-.2px;
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .kv .row{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .kv .k{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-bottom: 6px;
+    }
+    .kv .v{
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .callout{
+      margin-top: 12px;
+      border: 1px dashed rgba(124,58,237,.55);
+      background: rgba(124,58,237,.10);
+      padding: 12px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    .hidden{ display:none !important; }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+
+    /* print */
+    @media print{
+      body{ background:#fff; color:#000; }
+      .topbar, .tabs, .btn{ display:none !important; }
+      .card, header.hero{ box-shadow:none; background:#fff; border: 1px solid #ddd; }
+      .wrap{ max-width: 900px; padding: 10px; }
+      a{ text-decoration:none; color:#000; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar" role="navigation" aria-label="Üst menü">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>Gizlilik Politikası</b>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="pill" title="Bu sayfayı Google Play inceleme ekibi görebilmelidir.">
+          <span>Durum:</span> <code>Public</code>
+        </div>
+        <button class="btn" type="button" id="copyLinkBtn" title="Sayfa linkini kopyala">Linki Kopyala</button>
+        <button class="btn primary" type="button" onclick="window.print()" title="Yazdır / PDF al">Yazdır</button>
+      </div>
+    </div>
+
+    <header class="hero">
+      <h1>Gizlilik Politikası</h1>
+      <p>
+        Bu sayfa, uygulamanın hangi verileri topladığını, bu verileri nasıl kullandığını, paylaşıp paylaşmadığını,
+        nasıl koruduğunu ve kullanıcı haklarını açıklar.
+      </p>
+      <div class="meta-row">
+        <div class="badge"><span class="dot" aria-hidden="true"></span><span>Şeffaflık odaklı</span></div>
+        <div class="badge">🔒 Şifreli bağlantı (HTTPS)</div>
+        <div class="badge">🧾 TR / EN</div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Dil seçimi">
+        <button class="tab" id="tab-tr" role="tab" aria-selected="true" aria-controls="panel-tr">Türkçe</button>
+        <button class="tab" id="tab-en" role="tab" aria-selected="false" aria-controls="panel-en">English</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- MAIN CONTENT -->
+      <section class="card" aria-live="polite">
+        <!-- TR -->
+        <div id="panel-tr" role="tabpanel" aria-labelledby="tab-tr">
+          <div class="section">
+            <div class="icon" aria-hidden="true">📥</div>
+            <div>
+              <h2>1) Veri Toplama</h2>
+              <p>
+                Uygulama, hesap oluşturma ve hizmet kullanımı için <b>ad, soyad, e-posta, telefon, doğum tarihi</b> ve
+                <b>profil fotoğrafı</b> gibi kişisel bilgileri toplar. <b>Strava</b> bağlantısı yapıldığında,
+                koşu aktiviteleri ve performans verileri <b>Strava API</b> üzerinden alınır.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🧠</div>
+            <div>
+              <h2>2) Veri Kullanımı</h2>
+              <p>
+                Toplanan veriler; uygulama hizmetlerinin sağlanması, kulüp istatistikleri ve liderlik tablolarının oluşturulması,
+                etkinlik ve yarış programlarının yönetimi, kullanıcı iletişimi ve hesap yönetimi için kullanılır.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <div>
+              <h2>3) Veri Paylaşımı</h2>
+              <p>
+                Kişisel verileriniz üçüncü taraflarla paylaşılmaz. Strava entegrasyonu için gerekli veriler yalnızca
+                Strava API üzerinden işlenir. Yöneticiler, etkinlik ve yarış yönetimi için sınırlı bilgilere erişebilir.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <div>
+              <h2>4) Veri Güvenliği</h2>
+              <p>
+                Veriler şifreli bağlantılar ve güvenli sunucularda saklanır. Hesap bilgileri şifrelenmiş olarak tutulur.
+                Kullanıcılar, hesap silme talebinde bulunabilir.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">✅</div>
+            <div>
+              <h2>5) Haklarınız</h2>
+              <p>
+                Kişisel bilgilerinize erişim, düzeltme ve silme hakkınız vardır. Profil sayfasından bilgilerinizi
+                güncelleyebilir veya hesap silme talebi oluşturabilirsiniz. Sorularınız için bizimle iletişime geçebilirsiniz.
+              </p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <b>Not:</b> Google Play inceleme ekibi bu sayfayı farklı ülkelerden / VPN ile kontrol edebilir.
+            Bu nedenle sayfanın <b>her yerden erişilebilir</b> olması önerilir.
+          </div>
+        </div>
+
+        <!-- EN -->
+        <div id="panel-en" role="tabpanel" aria-labelledby="tab-en" class="hidden">
+          <div class="section">
+            <div class="icon" aria-hidden="true">📥</div>
+            <div>
+              <h2>1) Data Collection</h2>
+              <p>
+                The app collects personal information such as <b>name, email, phone, date of birth</b> and
+                <b>profile photo</b> for account creation and service use. When connected to <b>Strava</b>,
+                running activities and performance data are retrieved via the <b>Strava API</b>.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🧠</div>
+            <div>
+              <h2>2) Data Usage</h2>
+              <p>
+                Collected data is used to provide app services, generate club statistics and leaderboards,
+                manage events and race programs, communicate with users, and manage accounts.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <div>
+              <h2>3) Data Sharing</h2>
+              <p>
+                Your personal data is not shared with third parties. Data required for Strava integration is processed
+                only through the Strava API. Administrators may access limited information for event and race management.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <div>
+              <h2>4) Data Security</h2>
+              <p>
+                Data is stored on secure servers with encrypted connections. Account information is kept encrypted.
+                Users may request account deletion.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="icon" aria-hidden="true">✅</div>
+            <div>
+              <h2>5) Your Rights</h2>
+              <p>
+                You have the right to access, correct, and delete your personal information. You can update your
+                information from the profile page or request account deletion. Contact us with any questions.
+              </p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <b>Note:</b> Google Play reviewers may check this page from different locations or using a VPN.
+            It is recommended that this page remains <b>publicly accessible</b>.
+          </div>
+        </div>
+      </section>
+
+      <!-- SIDE PANEL -->
+      <aside class="card side">
+        <h3>Hızlı Bilgiler</h3>
+        <div class="kv">
+          <div class="row">
+            <div class="k">Belge</div>
+            <div class="v">Gizlilik Politikası / Privacy Policy</div>
+          </div>
+          <div class="row">
+            <div class="k">Kapsam</div>
+            <div class="v">Hesap verileri, Strava entegrasyonu, istatistik & etkinlik yönetimi</div>
+          </div>
+          <div class="row">
+            <div class="k">Öneri</div>
+            <div class="v">Bu sayfayı VPN/yurtdışı erişimine açık tut (Google Play inceleme için)</div>
+          </div>
+          <div class="row">
+            <div class="k">İletişim</div>
+            <div class="v">
+              <span style="color:var(--muted2)">E-posta:</span>
+              <a href="mailto:privacy@yourdomain.com">privacy@yourdomain.com</a>
+              <div style="margin-top:6px; font-size:12px; color:var(--muted2)">
+                (Burayı kendi adresinle güncelle)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="border-color: rgba(34,197,94,.55); background: rgba(34,197,94,.10);">
+          <b>İpucu:</b> İstersen bu sayfayı <span style="font-family:var(--mono)">/privacy-policy</span> altında yayınla
+          ve Play Console’a aynı linki gir.
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> — Bu sayfa bilgilendirme amaçlıdır. Gerekiyorsa hukuki danışmanlık alın.
+    </footer>
+  </div>
+
+  <script>
+    const tabTR = document.getElementById('tab-tr');
+    const tabEN = document.getElementById('tab-en');
+    const panelTR = document.getElementById('panel-tr');
+    const panelEN = document.getElementById('panel-en');
+
+    function setLang(lang){
+      const isTR = lang === 'tr';
+      tabTR.setAttribute('aria-selected', String(isTR));
+      tabEN.setAttribute('aria-selected', String(!isTR));
+      panelTR.classList.toggle('hidden', !isTR);
+      panelEN.classList.toggle('hidden', isTR);
+      document.documentElement.lang = isTR ? 'tr' : 'en';
+      localStorage.setItem('pp_lang', lang);
+    }
+
+    tabTR.addEventListener('click', () => setLang('tr'));
+    tabEN.addEventListener('click', () => setLang('en'));
+
+    // Persist language preference
+    const saved = localStorage.getItem('pp_lang');
+    if(saved === 'en') setLang('en');
+
+    // Copy link button
+    document.getElementById('copyLinkBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const btn = document.getElementById('copyLinkBtn');
+        const old = btn.textContent;
+        btn.textContent = 'Kopyalandı ✅';
+        setTimeout(() => btn.textContent = old, 1200);
+      } catch {
+        alert('Link kopyalanamadı. Manuel kopyalayabilirsin:\n' + window.location.href);
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
